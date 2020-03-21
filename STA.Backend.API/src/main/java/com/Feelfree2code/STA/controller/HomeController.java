@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController 
 public class HomeController {
 
-	private final MyService myService;
+	private final MyService myService; 
 
 	public HomeController(MyService myService) {
 		this.myService = myService;
