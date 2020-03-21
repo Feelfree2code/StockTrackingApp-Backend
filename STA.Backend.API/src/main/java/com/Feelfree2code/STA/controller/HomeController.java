@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication(scanBasePackages = "com.Feelfree2code.STA")
-@RestController
+@RestController 
 public class HomeController {
 
 	private final MyService myService;
