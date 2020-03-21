@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "STA.Backend.API"
+		},
+		{
+			"path": "STA.Backend.Common"
+		},
+		{
+			"path": "STA.Backend.Data"
+		},
+		{
+			"path": "STA.Backend.Model"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "interactive"
+	}
+}

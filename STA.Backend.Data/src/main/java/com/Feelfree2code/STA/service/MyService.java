@@ -3,11 +3,6 @@ package com.Feelfree2code.STA.service;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Service;
 
-// @Service
-// public class Service {
-
-// }
-
 @Service
 @EnableConfigurationProperties(ServiceProperties.class)
 public class MyService {
