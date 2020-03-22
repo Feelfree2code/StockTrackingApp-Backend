@@ -1,14 +1,21 @@
 package com.Feelfree2code.STA.model.domain;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
-import javax.persistence.JoinColumn;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import com.Feelfree2code.STA.common.BaseDTO;
 
 /**
  * ProjectDTO
  */
+@Entity
+@Table(name="Project")
 public class ProjectDTO extends BaseDTO {
 
     private LocalDate start_time;
@@ -18,11 +25,11 @@ public class ProjectDTO extends BaseDTO {
 
     // F_KEYS
     
-    @JoinColumn(name = "contact_fk", referencedColumnName = "id")
-    private ProjectContactDTO projectContactDTO;
+    @OneToMany(mappedBy="project_id", cascade = CascadeType.ALL)
+    Set<ProjectContactDTO> projectContactDTO = new HashSet<>();
 
-    @JoinColumn(name = "project_part_fk", referencedColumnName = "id")
-    private ProjectPartDTO projectPartDTO;
+    @OneToMany(mappedBy="project_id", cascade = CascadeType.ALL)
+    Set<ProjectPartDTO> projectPartDTO = new HashSet<>();
 
     public LocalDate getStart_time() {
         return start_time;
@@ -54,6 +61,22 @@ public class ProjectDTO extends BaseDTO {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Set<ProjectContactDTO> getProjectContactDTO() {
+        return projectContactDTO;
+    }
+
+    public void setProjectContactDTO(Set<ProjectContactDTO> projectContactDTO) {
+        this.projectContactDTO = projectContactDTO;
+    }
+
+    public Set<ProjectPartDTO> getProjectPartDTO() {
+        return projectPartDTO;
+    }
+
+    public void setProjectPartDTO(Set<ProjectPartDTO> projectPartDTO) {
+        this.projectPartDTO = projectPartDTO;
     }
 
     

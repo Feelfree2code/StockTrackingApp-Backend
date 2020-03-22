@@ -1,6 +1,7 @@
 package com.Feelfree2code.STA.model.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import com.Feelfree2code.STA.common.BaseDTO;
 
@@ -8,6 +9,7 @@ import com.Feelfree2code.STA.common.BaseDTO;
  * UserDTO
  */
 @Entity
+@Table(name="User")
 public class UserDTO extends BaseDTO {
 
     private String user_name;
