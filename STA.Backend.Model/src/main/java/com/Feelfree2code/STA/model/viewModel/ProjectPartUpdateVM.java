@@ -5,7 +5,7 @@ package com.Feelfree2code.STA.model.viewModel;
  */
 public class ProjectPartUpdateVM {
 
-    public PartVM partId;
-    public ProjectVM projectId;
+    public int partId;
+    public int projectId;
     public int amount;
 }

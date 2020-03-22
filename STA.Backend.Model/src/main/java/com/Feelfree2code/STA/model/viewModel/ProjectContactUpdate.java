@@ -5,7 +5,7 @@ package com.Feelfree2code.STA.model.viewModel;
  */
 public class ProjectContactUpdate {
 
-    public ProjectVM projectId;
-    public CustomerVM customerId;
+    public int projectId;
+    public int customerId;
     public int priortyIndex;
 }

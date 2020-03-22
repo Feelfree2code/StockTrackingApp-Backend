@@ -7,7 +7,7 @@ import java.time.LocalDate;
  */
 public class PartBuyHistoryUpdateVM {
 
-    public PartVM partId;
+    public int partId;
     public LocalDate dateTime;
     public int amount;
     public double price;

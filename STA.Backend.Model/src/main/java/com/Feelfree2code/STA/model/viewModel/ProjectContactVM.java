@@ -7,7 +7,7 @@ import com.Feelfree2code.STA.common.BaseVM;
  */
 public class ProjectContactVM extends BaseVM {
 
-    public ProjectVM projectId;
-    public CustomerVM customerId;
+    public int projectId;
+    public int customerId;
     public int priortyIndex;
 }

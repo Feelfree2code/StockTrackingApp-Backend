@@ -7,7 +7,7 @@ import com.Feelfree2code.STA.common.BaseVM;
  */
 public class ProjectPartVM extends BaseVM {
 
-    public PartVM partId;
-    public ProjectVM projectId;
+    public int partId;
+    public int projectId;
     public int amount;
 }

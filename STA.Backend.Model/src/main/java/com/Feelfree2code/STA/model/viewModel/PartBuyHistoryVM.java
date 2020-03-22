@@ -9,7 +9,7 @@ import com.Feelfree2code.STA.common.BaseVM;
  */
 public class PartBuyHistoryVM extends BaseVM {
 
-    public PartVM partId;
+    public int partId;
     public LocalDate dateTime;
     public int amount;
     public double price;

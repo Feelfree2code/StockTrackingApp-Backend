@@ -7,8 +7,6 @@ import java.time.LocalDate;
  */
 public class ProjectAddVM {
 
-    public int id;
-
     public LocalDate startDate;
     public LocalDate endDate;
     public String title;
