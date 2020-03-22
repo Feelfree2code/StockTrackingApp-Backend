@@ -1,6 +1,9 @@
 {
 	"folders": [
 		{
+			"path": "."
+		},
+		{
 			"path": "STA.Backend.API"
 		},
 		{
@@ -11,12 +14,7 @@
 		},
 		{
 			"path": "STA.Backend.Model"
-		},
-		{
-			"path": "."
 		}
 	],
-	"settings": {
-		"java.configuration.updateBuildConfiguration": "interactive"
-	}
+	"settings": {}
 }
