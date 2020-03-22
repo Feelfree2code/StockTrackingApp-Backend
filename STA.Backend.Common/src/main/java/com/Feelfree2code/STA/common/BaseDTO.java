@@ -1,6 +1,7 @@
 package com.Feelfree2code.STA.common;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 public class BaseDTO {
 
     @Id
+    @GeneratedValue
     private Integer id;
 
     private boolean is_deleted;

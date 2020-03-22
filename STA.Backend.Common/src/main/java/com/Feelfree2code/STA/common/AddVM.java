@@ -1,9 +1,9 @@
 package com.Feelfree2code.STA.common;
 
 /**
- * BaseVM
+ * AddVM
  */
+public class AddVM {
 
-public class BaseVM {
+    
 }
-
