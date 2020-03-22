@@ -37,6 +37,4 @@ public class UserDTO extends BaseDTO {
     public void setIs_admin(boolean is_admin) {
         this.is_admin = is_admin;
     }
-
-    
 }
