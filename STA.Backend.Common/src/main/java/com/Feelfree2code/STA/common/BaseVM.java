@@ -5,5 +5,7 @@ package com.Feelfree2code.STA.common;
  */
 
 public class BaseVM {
+    
+    public int id;
 }
 
