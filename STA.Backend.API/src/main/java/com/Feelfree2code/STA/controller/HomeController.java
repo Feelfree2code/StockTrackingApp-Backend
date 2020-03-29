@@ -8,7 +8,9 @@ import com.Feelfree2code.STA.subStructure.BaseService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController 
 public class HomeController {
@@ -26,4 +28,10 @@ public class HomeController {
 		// return myService.get(false);
 		return baseService.get(false);
 	}
+
+	@GetMapping("/getById/{id}")
+	public UserDTO getUserById(@PathVariable("id") int id) {
+		return baseService.getById(id);
+	}
+	
 }

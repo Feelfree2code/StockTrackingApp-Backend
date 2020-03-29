@@ -13,7 +13,7 @@ import com.Feelfree2code.STA.model.domain.UserDTO;
 public interface IBaseService<T extends UserDTO, V extends BaseVM, A extends AddVM, U extends UpdateVM, ID extends Serializable> {
 
     Iterable<T> get(boolean showIsDeleted);
-    V getById(ID id);
+    T getById(ID id);
     boolean add(A model);
     boolean update(U model);
     boolean delete(ID model);

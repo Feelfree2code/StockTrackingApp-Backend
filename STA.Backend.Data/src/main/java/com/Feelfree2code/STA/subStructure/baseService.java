@@ -26,9 +26,8 @@ public class BaseService<T extends UserDTO, V extends BaseVM, A extends AddVM, U
     }
 
     @Override
-    public V getById(ID id) {
-        // TODO Auto-generated method stub
-        return null;
+    public T getById(ID id) {
+        return repository.findById(id).get();
     }
 
     @Override
