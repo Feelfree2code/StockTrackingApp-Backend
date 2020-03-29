@@ -1,22 +1,31 @@
 package com.Feelfree2code.STA;
 
-import com.Feelfree2code.STA.subStructure.baseRepository;
-import com.Feelfree2code.STA.subStructure.baseService;
+import com.Feelfree2code.STA.model.domain.UserDTO;
+import com.Feelfree2code.STA.model.viewModel.UserAddVM;
+import com.Feelfree2code.STA.model.viewModel.UserUpdateVM;
+import com.Feelfree2code.STA.model.viewModel.UserVM;
+// import com.Feelfree2code.STA.service.UserService;
+// import com.Feelfree2code.STA.subStructure.BaseRepository;
+import com.Feelfree2code.STA.subStructure.BaseService;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
  * AppConfig
  */
 @Configuration
-@EnableJpaRepositories(basePackages = "com.Feelfree2Code.STA", repositoryBaseClass = baseRepository.class)
+// @EnableJpaRepositories(basePackages = "com.Feelfree2Code.STA.subStructure",
+// repositoryBaseClass = baseRepository.class)
 public class AppConfig {
 
-    @Bean(name="repository")
-    public baseService<> getBaseService() {
-        
+    @Bean
+    public BaseService<UserDTO, UserVM, UserAddVM, UserUpdateVM, Integer> setBaseService() {
+        return new BaseService<UserDTO, UserVM, UserAddVM, UserUpdateVM, Integer>();
     }
-    
+
+    // @Bean
+    // public BaseRepository<UserDTO,UserVM,UserAddVM,UserUpdateVM,Integer> setBaseRepository() {
+    //     return new BaseRepository<UserDTO, UserVM, UserAddVM, UserUpdateVM, Integer>();
+    // }
 }

@@ -1,12 +1,11 @@
 package com.Feelfree2code.STA.subStructure;
 
 import java.io.Serializable;
-import java.util.List;
 
 import com.Feelfree2code.STA.common.AddVM;
-import com.Feelfree2code.STA.common.BaseDTO;
 import com.Feelfree2code.STA.common.BaseVM;
 import com.Feelfree2code.STA.common.UpdateVM;
+import com.Feelfree2code.STA.model.domain.UserDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +14,7 @@ import org.springframework.stereotype.Service;
  * baseService
  */
 @Service
-public class baseService<T extends BaseDTO, V extends BaseVM, A extends AddVM, U extends UpdateVM, ID extends Serializable>
+public class BaseService<T extends UserDTO, V extends BaseVM, A extends AddVM, U extends UpdateVM, ID extends Serializable>
         implements IBaseService<T, V, A, U, ID> {
 
     @Autowired
