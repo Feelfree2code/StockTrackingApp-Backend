@@ -31,7 +31,7 @@ public class UserDTO extends BaseDTO {
         this.email = email;
     }
 
-    public boolean isIs_admin() {
+    public boolean getIsAdmin() {
         return is_admin;
     }
 
