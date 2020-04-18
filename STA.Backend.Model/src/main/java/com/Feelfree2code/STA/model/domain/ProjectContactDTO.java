@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class ProjectContactDTO extends BaseDTO {
 
     private Integer priorty_index;
-    
+
     // F_KEYS
     @ManyToOne
     @JoinColumn(name = "fk_project")
@@ -24,7 +24,6 @@ public class ProjectContactDTO extends BaseDTO {
     @ManyToOne
     @JoinColumn(name = "fk_customer")
     private CustomerDTO customer_id;
-
 
     public Integer getPriorty_index() {
         return priorty_index;
@@ -49,5 +48,8 @@ public class ProjectContactDTO extends BaseDTO {
     public void setCustomer_id(CustomerDTO customer_id) {
         this.customer_id = customer_id;
     }
+
+
+
 
 }

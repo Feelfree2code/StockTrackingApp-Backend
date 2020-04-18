@@ -8,6 +8,8 @@ import javax.persistence.*;
 /**
  * PartDTO
  */
+@Entity
+@Table(name="Part")
 public class PartDTO extends BaseDTO {
 
     @Column(length = 32, columnDefinition = "varchar(32) default 'NotDefined'")

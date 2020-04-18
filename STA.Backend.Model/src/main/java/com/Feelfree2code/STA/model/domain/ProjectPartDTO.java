@@ -17,11 +17,13 @@ public class ProjectPartDTO extends BaseDTO {
     private Integer amount;
 
     // F_KEY
-
-    @OneToMany(mappedBy = "projectPartDTO")
+       
+    @ManyToOne
+    @JoinColumn(name="fk_project")
     private ProjectDTO project_id;
-
-    @OneToMany(mappedBy = "projectPartDTO")
+       
+    @ManyToOne
+    @JoinColumn(name="fk_part")
     private PartDTO part_id;
 
     public Integer getAmount() {

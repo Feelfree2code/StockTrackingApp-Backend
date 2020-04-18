@@ -1,14 +1,14 @@
 package com.Feelfree2code.STA.common;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 /**
  * BaseDTO
  */
 
-@Entity
+@MappedSuperclass 
 public class BaseDTO {
 
     @Id
