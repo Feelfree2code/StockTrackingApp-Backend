@@ -1,20 +1,37 @@
 package com.Feelfree2code.STA.controller;
 
-import com.Feelfree2code.STA.service.MyService;
+import com.Feelfree2code.STA.model.domain.UserDTO;
+import com.Feelfree2code.STA.model.viewModel.UserAddVM;
+import com.Feelfree2code.STA.model.viewModel.UserUpdateVM;
+import com.Feelfree2code.STA.model.viewModel.UserVM;
+import com.Feelfree2code.STA.subStructure.BaseService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController 
 public class HomeController {
 
-	private final MyService myService; 
-
-	public HomeController(MyService myService) {
-		this.myService = myService;
+	// private final userService myService; 
+    @Autowired
+	private BaseService<UserDTO,UserVM,UserAddVM,UserUpdateVM,Integer> baseService;
+	
+	public HomeController() {
+		// this.myService = myService;
 	}
 
 	@GetMapping("/")
-	public String home() {
-		return myService.message();
+	public Iterable<UserDTO> home() {
+		// return myService.get(false);
+		return baseService.get(false);
 	}
+
+	@GetMapping("/getById/{id}")
+	public UserDTO getUserById(@PathVariable("id") int id) {
+		return baseService.getById(id);
+	}
+	
 }

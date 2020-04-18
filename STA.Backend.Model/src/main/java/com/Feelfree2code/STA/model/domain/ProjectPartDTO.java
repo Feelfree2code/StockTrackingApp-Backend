@@ -1,22 +1,29 @@
 package com.Feelfree2code.STA.model.domain;
 
-import javax.persistence.OneToMany;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import com.Feelfree2code.STA.common.BaseDTO;
 
 /**
  * ProjectPartDTO
  */
+@Entity
+@Table(name="ProjectPart")
 public class ProjectPartDTO extends BaseDTO {
     
     private Integer amount;
 
     // F_KEY
-
-    @OneToMany(mappedBy = "projectPartDTO")
+       
+    @ManyToOne
+    @JoinColumn(name="fk_project")
     private ProjectDTO project_id;
-
-    @OneToMany(mappedBy = "projectPartDTO")
+       
+    @ManyToOne
+    @JoinColumn(name="fk_part")
     private PartDTO part_id;
 
     public Integer getAmount() {

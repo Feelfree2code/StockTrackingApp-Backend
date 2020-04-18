@@ -2,13 +2,18 @@ package com.Feelfree2code.STA.model.domain;
 
 import java.time.LocalDate;
 
-import javax.persistence.OneToMany;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import com.Feelfree2code.STA.common.BaseDTO;
 
 /**
  * PartBuyHistoryDTO
  */
+@Entity
+@Table(name="PartBuyHistory")
 public class PartBuyHistoryDTO extends BaseDTO {
 
 
@@ -18,10 +23,9 @@ public class PartBuyHistoryDTO extends BaseDTO {
 
     // F_KEYS
 
-    @OneToMany(mappedBy = "partBuyHistoryDTO")
+    @ManyToOne
+    @JoinColumn(name="fk_part")
     private PartDTO part_id;
-
-
 
     public LocalDate getDate_time() {
         return date_time;
