@@ -1,24 +1,21 @@
 package com.Feelfree2code.STA.model.domain;
 
-import javax.persistence.JoinColumn;
-
 import com.Feelfree2code.STA.common.BaseDTO;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * CustomerDTO
  */
-
+@Entity
+@Table(name = "Customer_DTO")
 public class CustomerDTO extends BaseDTO {
 
     private String first_name;
     private String last_name;
     private String phone_number;
     private String email;
-
-    // F_KEYS
-
-    @JoinColumn(name = "contact_fk", referencedColumnName = "id")
-    private ProjectContactDTO projectContactDTO;
 
     public String getFirst_name() {
         return first_name;

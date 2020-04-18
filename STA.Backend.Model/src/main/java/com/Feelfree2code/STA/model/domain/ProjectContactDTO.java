@@ -1,21 +1,28 @@
 package com.Feelfree2code.STA.model.domain;
 
-import javax.persistence.OneToMany;
-
 import com.Feelfree2code.STA.common.BaseDTO;
+
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * ProjectContactDTO
  */
+@Entity
+@Table(name = "ProjectContact")
 public class ProjectContactDTO extends BaseDTO {
 
     private Integer priorty_index;
     
     // F_KEYS
-    @OneToMany(mappedBy = "projectContactDTO")
+    @ManyToOne
+    @JoinColumn(name = "fk_project")
     private ProjectDTO project_id;
-    
-    @OneToMany(mappedBy = "projectContactDTO")
+
+    @ManyToOne
+    @JoinColumn(name = "fk_customer")
     private CustomerDTO customer_id;
 
 

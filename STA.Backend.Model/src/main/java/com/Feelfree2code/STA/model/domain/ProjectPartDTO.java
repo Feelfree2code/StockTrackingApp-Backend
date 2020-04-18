@@ -1,12 +1,17 @@
 package com.Feelfree2code.STA.model.domain;
 
-import javax.persistence.OneToMany;
-
 import com.Feelfree2code.STA.common.BaseDTO;
+
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * ProjectPartDTO
  */
+@Entity
+@Table(name = "Project_Part_DTO")
 public class ProjectPartDTO extends BaseDTO {
     
     private Integer amount;

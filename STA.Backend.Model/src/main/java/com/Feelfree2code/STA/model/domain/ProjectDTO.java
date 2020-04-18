@@ -1,10 +1,10 @@
 package com.Feelfree2code.STA.model.domain;
 
-import java.time.LocalDate;
-
-import javax.persistence.JoinColumn;
-
 import com.Feelfree2code.STA.common.BaseDTO;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.time.LocalDate;
 
 /**
  * ProjectDTO
@@ -15,14 +15,6 @@ public class ProjectDTO extends BaseDTO {
     private LocalDate end_time;
     private String title;
     private String address;
-
-    // F_KEYS
-    
-    @JoinColumn(name = "contact_fk", referencedColumnName = "id")
-    private ProjectContactDTO projectContactDTO;
-
-    @JoinColumn(name = "project_part_fk", referencedColumnName = "id")
-    private ProjectPartDTO projectPartDTO;
 
     public LocalDate getStart_time() {
         return start_time;
@@ -56,5 +48,4 @@ public class ProjectDTO extends BaseDTO {
         this.address = address;
     }
 
-    
 }

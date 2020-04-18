@@ -19,8 +19,9 @@
 		<dependency>
 			<groupId>com.Feelfree2code</groupId>
 			<artifactId>STA-Data</artifactId>
-			<version>${project.version}</version>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
 	</dependencies>
 
 </project>

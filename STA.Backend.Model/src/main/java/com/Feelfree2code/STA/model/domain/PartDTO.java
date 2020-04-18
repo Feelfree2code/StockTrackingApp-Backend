@@ -1,12 +1,9 @@
 package com.Feelfree2code.STA.model.domain;
 
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.JoinColumn;
-
 import com.Feelfree2code.STA.common.BaseDTO;
 import com.Feelfree2code.STA.common.enums.PartTypeEnum;
+
+import javax.persistence.*;
 
 /**
  * PartDTO
@@ -19,14 +16,6 @@ public class PartDTO extends BaseDTO {
     private String name;
     private String specs;
     private Integer amount;
-
-    // F_KEYS
-
-    @JoinColumn(name = "history_fk", referencedColumnName = "id")
-    private PartBuyHistoryDTO partBuyHistoryDTO;
-
-    @JoinColumn(name = "project_part_fk", referencedColumnName = "id")
-    private ProjectPartDTO projectPartDTO;
 
     public PartTypeEnum getPart_type() {
         return part_type;
