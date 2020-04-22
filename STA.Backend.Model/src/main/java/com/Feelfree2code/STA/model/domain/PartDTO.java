@@ -1,18 +1,9 @@
 package com.Feelfree2code.STA.model.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
 import com.Feelfree2code.STA.common.BaseDTO;
 import com.Feelfree2code.STA.common.enums.PartTypeEnum;
+
+import javax.persistence.*;
 
 /**
  * PartDTO
@@ -28,14 +19,6 @@ public class PartDTO extends BaseDTO {
     private String specs;
     private Integer amount;
 
-    // F_KEYS
-
-    @OneToMany(mappedBy="part_id", cascade = CascadeType.ALL)
-    Set<PartBuyHistoryDTO> partBuyHistoryDTO = new HashSet<>();
-
-    @OneToMany(mappedBy="part_id", cascade = CascadeType.ALL)
-    Set<ProjectPartDTO> projectPartDTO = new HashSet<>();
-    
     public PartTypeEnum getPart_type() {
         return part_type;
     }
@@ -66,22 +49,6 @@ public class PartDTO extends BaseDTO {
 
     public void setAmount(Integer amount) {
         this.amount = amount;
-    }
-
-    public Set<PartBuyHistoryDTO> getPartBuyHistoryDTO() {
-        return partBuyHistoryDTO;
-    }
-
-    public void setPartBuyHistoryDTO(Set<PartBuyHistoryDTO> partBuyHistoryDTO) {
-        this.partBuyHistoryDTO = partBuyHistoryDTO;
-    }
-
-    public Set<ProjectPartDTO> getProjectPartDTO() {
-        return projectPartDTO;
-    }
-
-    public void setProjectPartDTO(Set<ProjectPartDTO> projectPartDTO) {
-        this.projectPartDTO = projectPartDTO;
     }
 
 }

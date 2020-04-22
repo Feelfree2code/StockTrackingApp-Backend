@@ -23,14 +23,6 @@ public class ProjectDTO extends BaseDTO {
     private String title;
     private String address;
 
-    // F_KEYS
-    
-    @OneToMany(mappedBy="project_id", cascade = CascadeType.ALL)
-    Set<ProjectContactDTO> projectContactDTO = new HashSet<>();
-
-    @OneToMany(mappedBy="project_id", cascade = CascadeType.ALL)
-    Set<ProjectPartDTO> projectPartDTO = new HashSet<>();
-
     public LocalDate getStart_time() {
         return start_time;
     }
@@ -63,21 +55,4 @@ public class ProjectDTO extends BaseDTO {
         this.address = address;
     }
 
-    public Set<ProjectContactDTO> getProjectContactDTO() {
-        return projectContactDTO;
-    }
-
-    public void setProjectContactDTO(Set<ProjectContactDTO> projectContactDTO) {
-        this.projectContactDTO = projectContactDTO;
-    }
-
-    public Set<ProjectPartDTO> getProjectPartDTO() {
-        return projectPartDTO;
-    }
-
-    public void setProjectPartDTO(Set<ProjectPartDTO> projectPartDTO) {
-        this.projectPartDTO = projectPartDTO;
-    }
-
-    
 }

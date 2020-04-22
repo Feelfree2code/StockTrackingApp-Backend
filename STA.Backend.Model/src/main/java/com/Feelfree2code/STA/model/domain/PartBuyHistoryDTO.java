@@ -1,21 +1,19 @@
 package com.Feelfree2code.STA.model.domain;
 
-import java.time.LocalDate;
+import com.Feelfree2code.STA.common.BaseDTO;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.Feelfree2code.STA.common.BaseDTO;
+import java.time.LocalDate;
 
 /**
  * PartBuyHistoryDTO
  */
 @Entity
-@Table(name="PartBuyHistory")
+@Table(name = "PartBuyHistory")
 public class PartBuyHistoryDTO extends BaseDTO {
-
 
     private LocalDate date_time;
     private Integer amount;
@@ -24,7 +22,7 @@ public class PartBuyHistoryDTO extends BaseDTO {
     // F_KEYS
 
     @ManyToOne
-    @JoinColumn(name="fk_part")
+    @JoinColumn(name = "fk_part")
     private PartDTO part_id;
 
     public LocalDate getDate_time() {
@@ -59,5 +57,4 @@ public class PartBuyHistoryDTO extends BaseDTO {
         this.part_id = part_id;
     }
 
-    
 }

@@ -1,31 +1,21 @@
 package com.Feelfree2code.STA.model.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
 import com.Feelfree2code.STA.common.BaseDTO;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * CustomerDTO
  */
 @Entity
-@Table(name="Customer")
+@Table(name = "Customer_DTO")
 public class CustomerDTO extends BaseDTO {
 
     private String first_name;
     private String last_name;
     private String phone_number;
     private String email;
-
-    // F_KEYS
-
-    @OneToMany(mappedBy="customer_id", cascade = CascadeType.ALL)
-    Set<ProjectContactDTO> projectContactDTO = new HashSet<>();
 
     public String getFirst_name() {
         return first_name;
@@ -57,14 +47,6 @@ public class CustomerDTO extends BaseDTO {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Set<ProjectContactDTO> getProjectContactDTO() {
-        return projectContactDTO;
-    }
-
-    public void setProjectContactDTO(Set<ProjectContactDTO> projectContactDTO) {
-        this.projectContactDTO = projectContactDTO;
     }
 
 }
