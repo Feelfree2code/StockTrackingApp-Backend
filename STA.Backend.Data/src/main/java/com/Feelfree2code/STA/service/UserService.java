@@ -1,5 +1,6 @@
 package com.Feelfree2code.STA.service;
 
+import com.Feelfree2code.STA.common.APIResultVM;
 import com.Feelfree2code.STA.model.domain.UserDTO;
 import com.Feelfree2code.STA.model.viewModel.UserAddVM;
 import com.Feelfree2code.STA.model.viewModel.UserUpdateVM;
@@ -20,7 +21,6 @@ public class UserService implements IUserService {
 
     @Autowired
     private IBaseRepository<UserDTO, Integer> repository;
-
 
     public List<UserVM> get(boolean showIsDeleted) {
         List<UserDTO> records = repository.findAll();
@@ -57,8 +57,9 @@ public class UserService implements IUserService {
         }
     }
 
-    public boolean add(UserAddVM model) {
+    public APIResultVM add(UserAddVM model) {
         UserDTO entity = null;
+        APIResultVM returnValue = new APIResultVM();
 
         try {
             entity.setUser_name(model.userName);
@@ -66,14 +67,19 @@ public class UserService implements IUserService {
             entity.setIs_admin(model.isAdmin);
 
             repository.save(entity);
-            return true;
+
+            returnValue.setId(entity.getId());
+            returnValue.setSucceed(true);
         } catch (Exception e) {
-            return false;
+            returnValue.setSucceed(false);
         }
+
+        return returnValue;
     }
 
-    public boolean update(Integer id, UserUpdateVM model) {
+    public APIResultVM update(Integer id, UserUpdateVM model) {
         UserDTO entity = null;
+        APIResultVM returnValue = new APIResultVM();
 
         try {
             entity = repository.findById(id).get();
@@ -83,21 +89,29 @@ public class UserService implements IUserService {
             entity.setIs_admin(model.isAdmin);
 
             repository.save(entity);
-            return true;
+
+            returnValue.setId(entity.getId());
+            returnValue.setSucceed(true);
         } catch (Exception e) {
-            return false;
+            returnValue.setSucceed(false);
         }
+
+        return returnValue;
     }
 
-    public boolean delete(Integer id) {
+    public APIResultVM delete(Integer id) {
         UserDTO entity = null;
+        APIResultVM returnValue = new APIResultVM();
+
         try {
             entity = repository.findById(id).get();
             repository.delete(entity);
 
-            return true;
+            returnValue.setSucceed(true);
         } catch (Exception e) {
-            return false;
+            returnValue.setSucceed(false);
         }
+
+        return returnValue;
     }
 }

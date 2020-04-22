@@ -1,5 +1,6 @@
 package com.Feelfree2code.STA.service;
 
+import com.Feelfree2code.STA.common.APIResultVM;
 import com.Feelfree2code.STA.model.viewModel.UserAddVM;
 import com.Feelfree2code.STA.model.viewModel.UserUpdateVM;
 import com.Feelfree2code.STA.model.viewModel.UserVM;
@@ -11,9 +12,9 @@ public interface IUserService {
 
     UserVM getById(Integer id);
 
-    boolean add(UserAddVM model);
+    APIResultVM add(UserAddVM model);
 
-    boolean update(Integer id, UserUpdateVM model);
+    APIResultVM update(Integer id, UserUpdateVM model);
 
-    boolean delete(Integer id);
+    APIResultVM delete(Integer id);
 }
