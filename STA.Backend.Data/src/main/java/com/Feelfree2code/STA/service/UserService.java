@@ -8,6 +8,7 @@ import com.Feelfree2code.STA.model.viewModel.UserVM;
 import com.Feelfree2code.STA.subStructure.IBaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,17 +17,17 @@ import java.util.List;
  * userService
  */
 @Service
+@Transactional
 public class UserService implements IUserService {
 
     @Autowired
-    private IBaseRepository<UserDTO, Integer> repository;
-
+    private IBaseRepository repository;
 
     public List<UserVM> get(boolean showIsDeleted) {
         List<UserDTO> records = repository.findAll();
         List<UserVM> results = new ArrayList<>();
 
-        for (UserDTO record: records) {
+        for (UserDTO record : records) {
             UserVM vm = new UserVM();
             vm.email = record.getEmail();
             vm.userName = record.getUser_name();
@@ -53,7 +54,7 @@ public class UserService implements IUserService {
 
             return vm;
         } catch (Exception e) {
-           return new UserVM();
+            return new UserVM();
         }
     }
 

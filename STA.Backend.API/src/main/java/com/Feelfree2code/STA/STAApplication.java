@@ -6,7 +6,7 @@ import org.springframework.web.SpringServletContainerInitializer;
 
 
 @SpringBootApplication(scanBasePackages = {"com.Feelfree2code.STA"})
-public class STAApplication extends SpringServletContainerInitializer {    
+public class STAApplication {
     public static void main(String[] args) {
             SpringApplication.run(STAApplication.class, args);
     }
