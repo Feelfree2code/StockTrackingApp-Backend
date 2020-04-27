@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 public interface IUserService {
-    ResponseEntity<List<UserVM>> get(String showIsDeleted);
+    ResponseEntity<List<UserVM>> get(boolean showIsDeleted);
 
     ResponseEntity<UserVM> getById(Integer id);
 

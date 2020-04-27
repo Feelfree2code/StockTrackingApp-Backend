@@ -22,15 +22,15 @@ public class UserService implements IUserService {
     @Autowired
     private IBaseRepository repository;
 
-    public ResponseEntity<List<UserVM>> get(String showIsDeleted) {
-        List<UserDTO> records = repository.findAll();
+    public ResponseEntity<List<UserVM>> get(boolean showIsDeleted) {
+        List<UserDTO> records = repository.findByIsDeleted(showIsDeleted);
         List<UserVM> results = new ArrayList<>();
 
         for (UserDTO record : records) {
             UserVM vm = new UserVM();
             vm.email = record.getEmail();
-            vm.userName = record.getUser_name();
-            vm.isAdmin = record.getIsAdmin();
+            vm.userName = record.getUserName();
+            vm.isAdmin = record.isAdmin();
             vm.id = record.getId();
 
             results.add(vm);
@@ -54,8 +54,8 @@ public class UserService implements IUserService {
             UserVM vm = new UserVM();
 
             vm.email = record.getEmail();
-            vm.userName = record.getUser_name();
-            vm.isAdmin = record.getIsAdmin();
+            vm.userName = record.getUserName();
+            vm.isAdmin = record.isAdmin();
             vm.id = record.getId();
 
             return new ResponseEntity<>(vm, HttpStatus.OK);
@@ -67,10 +67,10 @@ public class UserService implements IUserService {
     public ResponseEntity<UserDTO> add(UserAddVM model) {
         UserDTO entity = new UserDTO();
 
-        entity.setUser_name(model.userName);
+        entity.setUserName(model.userName);
         entity.setEmail(model.email);
-        entity.setIs_admin(model.isAdmin);
-        entity.setIs_deleted(model.isDeleted);
+        entity.setAdmin(model.isAdmin);
+        entity.setDeleted(model.isDeleted);
 
         repository.save(entity);
         return new ResponseEntity<>(entity, HttpStatus.OK);
@@ -83,10 +83,10 @@ public class UserService implements IUserService {
         if (repository.existsById(id)) {
             entity = repository.getOne(id);
 
-            entity.setUser_name(model.userName);
+            entity.setUserName(model.userName);
             entity.setEmail(model.email);
-            entity.setIs_admin(model.isAdmin);
-            entity.setIs_deleted(model.isDeleted);
+            entity.setAdmin(model.isAdmin);
+            entity.setDeleted(model.isDeleted);
 
             return new ResponseEntity<>(repository.save(entity), HttpStatus.OK);
         }

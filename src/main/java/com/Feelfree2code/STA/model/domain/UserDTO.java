@@ -11,16 +11,16 @@ import com.Feelfree2code.STA.common.BaseDTO;
 @Entity
 @Table(name="UserTable")
 public class UserDTO extends BaseDTO {  
-    private String user_name;
+    private String userName;
     private String email;
-    private boolean is_admin;
+    private boolean isAdmin;
 
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getEmail() {
@@ -31,11 +31,11 @@ public class UserDTO extends BaseDTO {
         this.email = email;
     }
 
-    public boolean getIsAdmin() {
-        return is_admin;
+    public boolean isAdmin() {
+        return isAdmin;
     }
 
-    public void setIs_admin(boolean is_admin) {
-        this.is_admin = is_admin;
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 }

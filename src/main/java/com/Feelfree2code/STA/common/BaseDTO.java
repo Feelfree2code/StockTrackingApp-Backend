@@ -17,7 +17,7 @@ public class BaseDTO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private boolean is_deleted;
+    private boolean isDeleted;
 
     public Integer getId() {
         return id;
@@ -27,13 +27,11 @@ public class BaseDTO {
         this.id = id;
     }
 
-    public boolean isIs_deleted() {
-        return is_deleted;
+    public boolean isDeleted() {
+        return isDeleted;
     }
 
-    public void setIs_deleted(boolean is_deleted) {
-        this.is_deleted = is_deleted;
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
-
-    
 }

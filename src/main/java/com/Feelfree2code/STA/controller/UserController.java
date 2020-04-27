@@ -23,7 +23,7 @@ public class UserController {
 
     // /api/users; /api/users/{showIsDeleted}
     @GetMapping
-    public ResponseEntity<List<UserVM>> get(String showIsDeleted) {
+    public ResponseEntity<List<UserVM>> get(@RequestParam boolean showIsDeleted) {
         return service.get(showIsDeleted);
     }
 
