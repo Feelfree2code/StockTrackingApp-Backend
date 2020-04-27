@@ -1,4 +1,4 @@
-package com.Feelfree2code.STA;
+package com.Feelfree2code;
 
 //import com.Feelfree2code.STA.model.domain.UserDTO;
 //import com.Feelfree2code.STA.model.viewModel.UserAddVM;

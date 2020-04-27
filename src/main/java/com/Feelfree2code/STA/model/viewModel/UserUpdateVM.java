@@ -10,10 +10,11 @@ import javax.validation.constraints.Size;
  */
 public class UserUpdateVM extends UpdateVM {
     @NotEmpty
-    @Size(min=4, max=15)
+    @Size(min = 4, max = 15)
     public String userName;
     @NotEmpty
-    @Size(min=6, max=25)
+    @Size(min = 6, max = 25)
     public String email;
     public boolean isAdmin;
+    public boolean isDeleted;
 }

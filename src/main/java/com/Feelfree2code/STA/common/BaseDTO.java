@@ -1,8 +1,10 @@
 package com.Feelfree2code.STA.common;
 
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.Min;
 
 /**
  * BaseDTO
@@ -12,7 +14,7 @@ import javax.persistence.MappedSuperclass;
 public class BaseDTO {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private boolean is_deleted;
