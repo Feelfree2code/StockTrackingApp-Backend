@@ -1,5 +1,6 @@
 package com.Feelfree2code.STA.service;
 
+import com.Feelfree2code.STA.common.IdValidator;
 import com.Feelfree2code.STA.model.domain.UserDTO;
 import com.Feelfree2code.STA.model.viewModel.UserAddVM;
 import com.Feelfree2code.STA.model.viewModel.UserUpdateVM;
@@ -17,7 +18,7 @@ import java.util.List;
  * userService
  */
 @Service
-public class UserService implements IUserService {
+public class UserService implements IUserService, IdValidator {
 
     @Autowired
     private IBaseRepository repository;
@@ -40,7 +41,7 @@ public class UserService implements IUserService {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
-        return new ResponseEntity<>(results, HttpStatus.OK) ;
+        return new ResponseEntity<>(results, HttpStatus.OK);
     }
 
     public ResponseEntity<UserVM> getById(Integer id) {
@@ -107,7 +108,8 @@ public class UserService implements IUserService {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    private boolean isValidId(Integer id) {
+    @Override
+    public boolean isValidId(Integer id) {
         return id == 0 || id < 0;
     }
 }

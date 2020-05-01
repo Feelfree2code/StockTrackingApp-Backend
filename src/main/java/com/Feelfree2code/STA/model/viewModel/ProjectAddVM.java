@@ -1,14 +1,14 @@
 package com.Feelfree2code.STA.model.viewModel;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * ProjectAddVM
  */
 public class ProjectAddVM {
 
-    public LocalDate startDate;
-    public LocalDate endDate;
+    public Date startDate;
+    public Date endDate;
     public String title;
     public String address;
 }
