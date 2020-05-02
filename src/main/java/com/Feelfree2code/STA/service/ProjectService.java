@@ -118,9 +118,4 @@ public class ProjectService implements IBaseService<ProjectVM, ProjectAddVM,
     public ResponseEntity<List<ProjectVM>> getIsDeleted(boolean showIsDeleted) {
         return null;
     }
-
-    @Override
-    public boolean isValidId(Integer id) {
-        return id == 0 || id < 0;
-    }
 }

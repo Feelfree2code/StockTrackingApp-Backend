@@ -22,7 +22,7 @@ public class ProjectController {
     }
 
     @PostMapping
-    public ResponseEntity<ProjectDTO> saveProject(@RequestBody @Valid ProjectAddVM project) {
+    public ResponseEntity<ProjectDTO> add(@RequestBody @Valid ProjectAddVM project) {
         return service.add(project);
     }
 
@@ -37,8 +37,8 @@ public class ProjectController {
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<ProjectDTO> updateProject(@PathVariable Integer id,
-                                                         @RequestBody @Valid ProjectUpdateVM project) {
+    public ResponseEntity<ProjectDTO> update(@PathVariable Integer id,
+                                             @RequestBody @Valid ProjectUpdateVM project) {
         return service.update(id, project);
     }
 
