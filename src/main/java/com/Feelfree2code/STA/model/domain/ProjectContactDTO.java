@@ -14,39 +14,39 @@ import javax.persistence.Table;
 @Table(name = "ProjectContact")
 public class ProjectContactDTO extends BaseDTO {
 
-    private Integer priorty_index;
+    private Integer priortyIndex;
 
     // F_KEYS
     @ManyToOne
     @JoinColumn(name = "fk_project")
-    private ProjectDTO project_id;
+    private ProjectDTO projectId;
 
     @ManyToOne
     @JoinColumn(name = "fk_customer")
-    private CustomerDTO customer_id;
+    private CustomerDTO customerId;
 
-    public Integer getPriorty_index() {
-        return priorty_index;
+    public Integer getPriortyIndex() {
+        return priortyIndex;
     }
 
-    public void setPriorty_index(Integer priorty_index) {
-        this.priorty_index = priorty_index;
+    public void setPriortyIndex(Integer priortyIndex) {
+        this.priortyIndex = priortyIndex;
     }
 
-    public ProjectDTO getProject_id() {
-        return project_id;
+    public ProjectDTO getProjectId() {
+        return projectId;
     }
 
-    public void setProject_id(ProjectDTO project_id) {
-        this.project_id = project_id;
+    public void setProjectId(ProjectDTO projectId) {
+        this.projectId = projectId;
     }
 
-    public CustomerDTO getCustomer_id() {
-        return customer_id;
+    public CustomerDTO getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(CustomerDTO customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(CustomerDTO customerId) {
+        this.customerId = customerId;
     }
 
 

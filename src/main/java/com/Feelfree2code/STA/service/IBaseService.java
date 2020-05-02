@@ -1,12 +1,16 @@
 package com.Feelfree2code.STA.service;
 
+import com.Feelfree2code.STA.common.AddVM;
+import com.Feelfree2code.STA.common.BaseDTO;
+import com.Feelfree2code.STA.common.BaseVM;
+import com.Feelfree2code.STA.common.UpdateVM;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 @NoRepositoryBean
-public interface IBaseService<V, S, U, D> {
+public interface IBaseService<V extends BaseVM, S extends AddVM, U extends UpdateVM, D extends BaseDTO> {
 
     ResponseEntity<List<V>> get();
 

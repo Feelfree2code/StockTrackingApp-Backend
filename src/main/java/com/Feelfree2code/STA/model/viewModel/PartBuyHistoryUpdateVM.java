@@ -1,14 +1,16 @@
 package com.Feelfree2code.STA.model.viewModel;
 
-import java.time.LocalDate;
+import com.Feelfree2code.STA.common.UpdateVM;
+
+import java.util.Date;
 
 /**
  * PartBuyHistoryUpdateVM
  */
-public class PartBuyHistoryUpdateVM {
+public class PartBuyHistoryUpdateVM extends UpdateVM {
 
     public int partId;
-    public LocalDate dateTime;
+    public Date dateTime;
     public int amount;
     public double price;
 }

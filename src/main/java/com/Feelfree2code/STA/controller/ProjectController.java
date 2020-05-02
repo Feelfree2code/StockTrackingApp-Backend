@@ -27,7 +27,7 @@ public class ProjectController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ProjectVM>> getAllProject() {
+    public ResponseEntity<List<ProjectVM>> get() {
         return service.get();
     }
 

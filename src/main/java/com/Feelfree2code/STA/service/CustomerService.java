@@ -2,11 +2,9 @@ package com.Feelfree2code.STA.service;
 
 import com.Feelfree2code.STA.common.IdValidator;
 import com.Feelfree2code.STA.model.domain.CustomerDTO;
-import com.Feelfree2code.STA.model.domain.ProjectDTO;
 import com.Feelfree2code.STA.model.viewModel.CustomerAddVM;
 import com.Feelfree2code.STA.model.viewModel.CustomerUpdateVM;
 import com.Feelfree2code.STA.model.viewModel.CustomerVM;
-import com.Feelfree2code.STA.model.viewModel.ProjectVM;
 import com.Feelfree2code.STA.subStructure.ICustomerRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

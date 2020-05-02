@@ -14,17 +14,17 @@ public class PartDTO extends BaseDTO {
 
     @Column(length = 32, columnDefinition = "varchar(32) default 'NotDefined'")
     @Enumerated(value = EnumType.STRING)
-    private PartTypeEnum part_type = PartTypeEnum.NotDefined;
+    private PartTypeEnum partType = PartTypeEnum.NotDefined;
     private String name;
     private String specs;
     private Integer amount;
 
-    public PartTypeEnum getPart_type() {
-        return part_type;
+    public PartTypeEnum getPartType() {
+        return partType;
     }
 
-    public void setPart_type(PartTypeEnum part_type) {
-        this.part_type = part_type;
+    public void setPartType(PartTypeEnum partType) {
+        this.partType = partType;
     }
 
     public String getName() {
