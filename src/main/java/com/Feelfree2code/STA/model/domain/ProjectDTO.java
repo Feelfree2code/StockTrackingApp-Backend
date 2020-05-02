@@ -6,6 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 /**
@@ -17,9 +21,19 @@ public class ProjectDTO extends BaseDTO {
 
     @Temporal(TemporalType.DATE)
     private Date startTime;
+
     @Temporal(TemporalType.DATE)
+    @Future
     private Date endTime;
+
+    @NotEmpty
+    @NotNull
+    @Size(min = 1, max = 10)
     private String title;
+
+    @NotEmpty
+    @NotNull
+    @Size(min = 10, max = 200)
     private String address;
 
     public Date getStartTime() {

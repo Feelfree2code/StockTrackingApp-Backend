@@ -36,8 +36,8 @@ public class ProjectContactService implements IBaseService<ProjectContactVM, Pro
         for (ProjectContactDTO record : records) {
             ProjectContactVM vm = new ProjectContactVM();
             vm.id = record.getId();
-            vm.customerId = record.getCustomerId().getId();
-            vm.projectId = record.getProjectId().getId();
+//            vm.customerId = record.getCustomerId().getId();
+//            vm.projectId = record.getProjectId().getId();
             vm.priortyIndex = record.getPriortyIndex();
 
             results.add(vm);
@@ -58,9 +58,9 @@ public class ProjectContactService implements IBaseService<ProjectContactVM, Pro
 
             ProjectContactVM vm = new ProjectContactVM();
             vm.id = record.getId();
-            vm.priortyIndex = record.getPriortyIndex();
-            vm.projectId = record.getProjectId().getId();
-            vm.customerId = record.getCustomerId().getId();
+//            vm.priortyIndex = record.getPriortyIndex();
+//            vm.projectId = record.getProjectId().getId();
+//            vm.customerId = record.getCustomerId().getId();
 
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {

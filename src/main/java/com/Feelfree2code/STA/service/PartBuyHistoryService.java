@@ -1,7 +1,6 @@
 package com.Feelfree2code.STA.service;
 
 import com.Feelfree2code.STA.common.IdValidator;
-import com.Feelfree2code.STA.model.domain.CustomerDTO;
 import com.Feelfree2code.STA.model.domain.PartBuyHistoryDTO;
 import com.Feelfree2code.STA.model.viewModel.PartBuyHistoryAddVM;
 import com.Feelfree2code.STA.model.viewModel.PartBuyHistoryUpdateVM;

@@ -6,22 +6,28 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 /**
  * ProjectPartDTO
  */
 @Entity
-@Table(name = "Project_Part_DTO")
+@Table(name = "ProjectPart")
 public class ProjectPartDTO extends BaseDTO {
-    
+
+    @NotNull
+    @Min(1)
     private Integer amount;
 
     // F_KEY
-       
+
+    @NotNull
     @ManyToOne
     @JoinColumn(name="fk_project")
     private ProjectDTO projectId;
-       
+
+    @NotNull
     @ManyToOne
     @JoinColumn(name="fk_part")
     private PartDTO partId;

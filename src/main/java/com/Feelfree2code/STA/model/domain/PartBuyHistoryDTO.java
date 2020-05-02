@@ -3,6 +3,8 @@ package com.Feelfree2code.STA.model.domain;
 import com.Feelfree2code.STA.common.BaseDTO;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -12,9 +14,16 @@ import java.util.Date;
 @Table(name = "PartBuyHistory")
 public class PartBuyHistoryDTO extends BaseDTO {
 
+    @NotNull
     @Temporal(TemporalType.DATE)
     private Date dateTime;
+
+    @NotNull
+    @Min(1)
     private Integer amount;
+
+    @NotNull
+    @Min(1)
     private Double price;
 
     // F_KEYS

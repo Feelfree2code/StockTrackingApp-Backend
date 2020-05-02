@@ -8,6 +8,7 @@ import com.Feelfree2code.STA.service.CustomerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -21,7 +22,7 @@ public class CustomerController {
     }
     
     @PostMapping
-    public ResponseEntity<CustomerDTO> add(@RequestBody CustomerAddVM customer) {
+    public ResponseEntity<CustomerDTO> add(@RequestBody @Valid CustomerAddVM customer) {
         return service.add(customer);
     } 
     
@@ -36,7 +37,7 @@ public class CustomerController {
     } 
     
     @PutMapping(path = "{id}")
-    public ResponseEntity<CustomerDTO> update(@PathVariable Integer id, @RequestBody CustomerUpdateVM customer) {
+    public ResponseEntity<CustomerDTO> update(@PathVariable Integer id, @RequestBody @Valid CustomerUpdateVM customer) {
         return service.update(id, customer);
     }
 

@@ -8,6 +8,7 @@ import com.Feelfree2code.STA.service.PartService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -21,7 +22,7 @@ public class PartController {
     }
 
     @PostMapping
-    public ResponseEntity<PartDTO> add(@RequestBody PartAddVM partAddVM) {
+    public ResponseEntity<PartDTO> add(@RequestBody @Valid PartAddVM partAddVM) {
         return service.add(partAddVM);
     }
 
@@ -36,7 +37,7 @@ public class PartController {
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<PartDTO> update(@PathVariable Integer id, @RequestBody PartUpdateVM partUpdateVM) {
+    public ResponseEntity<PartDTO> update(@PathVariable Integer id, @RequestBody @Valid PartUpdateVM partUpdateVM) {
         return service.update(id,partUpdateVM);
     }
 

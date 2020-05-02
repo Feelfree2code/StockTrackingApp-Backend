@@ -4,17 +4,34 @@ import com.Feelfree2code.STA.common.BaseDTO;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * CustomerDTO
  */
 @Entity
-@Table(name = "Customer_DTO")
+@Table(name = "Customer")
 public class CustomerDTO extends BaseDTO {
-
+    @NotEmpty
+    @NotNull
+    @Size(min=4, max=15)
     private String firstName;
+
+    @NotEmpty
+    @NotNull
+    @Size(min=4, max=15)
     private String lastName;
+
+    @NotEmpty
+    @NotNull
     private String phoneNumber;
+
+    @Email
+    @NotNull
+    @NotEmpty
     private String email;
 
     public String getFirstName() {

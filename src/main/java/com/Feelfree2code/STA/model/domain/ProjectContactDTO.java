@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 /**
  * ProjectContactDTO
@@ -14,13 +15,16 @@ import javax.persistence.Table;
 @Table(name = "ProjectContact")
 public class ProjectContactDTO extends BaseDTO {
 
+    @NotNull
     private Integer priortyIndex;
 
     // F_KEYS
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "fk_project")
     private ProjectDTO projectId;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "fk_customer")
     private CustomerDTO customerId;

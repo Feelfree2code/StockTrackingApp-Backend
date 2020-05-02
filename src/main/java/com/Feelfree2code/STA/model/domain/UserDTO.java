@@ -1,9 +1,13 @@
 package com.Feelfree2code.STA.model.domain;
 
+import com.Feelfree2code.STA.common.BaseDTO;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
-import com.Feelfree2code.STA.common.BaseDTO;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * UserDTO
@@ -11,7 +15,14 @@ import com.Feelfree2code.STA.common.BaseDTO;
 @Entity
 @Table(name="UserTable")
 public class UserDTO extends BaseDTO {  
+    @NotNull
+    @NotEmpty
+    @Size(min = 3, max = 11)
     private String userName;
+
+    @NotEmpty
+    @NotNull
+    @Email
     private String email;
     private boolean isAdmin;
 

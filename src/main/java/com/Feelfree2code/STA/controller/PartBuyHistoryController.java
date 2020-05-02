@@ -8,6 +8,7 @@ import com.Feelfree2code.STA.service.PartBuyHistoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -21,7 +22,7 @@ public class PartBuyHistoryController {
     }
 
     @PostMapping
-    public ResponseEntity<PartBuyHistoryDTO> add(@RequestBody PartBuyHistoryAddVM partBuyHistory) {
+    public ResponseEntity<PartBuyHistoryDTO> add(@RequestBody @Valid PartBuyHistoryAddVM partBuyHistory) {
         return service.add(partBuyHistory);
     }
 
@@ -36,7 +37,7 @@ public class PartBuyHistoryController {
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<PartBuyHistoryDTO> update(@PathVariable Integer id, @RequestBody PartBuyHistoryUpdateVM partBuyHistoryUpdateVM) {
+    public ResponseEntity<PartBuyHistoryDTO> update(@PathVariable Integer id, @RequestBody @Valid PartBuyHistoryUpdateVM partBuyHistoryUpdateVM) {
         return service.update(id,partBuyHistoryUpdateVM);
     }
     
