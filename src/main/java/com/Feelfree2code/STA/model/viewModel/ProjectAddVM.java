@@ -15,6 +15,7 @@ import java.util.Date;
  */
 public class ProjectAddVM extends AddVM {
 
+    @NotNull
     @Temporal(TemporalType.DATE)
     public Date startDate;
 

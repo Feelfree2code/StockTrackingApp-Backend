@@ -19,6 +19,7 @@ import java.util.Date;
 @Table(name="Project")
 public class ProjectDTO extends BaseDTO {
 
+    @NotNull
     @Temporal(TemporalType.DATE)
     private Date startTime;
 
