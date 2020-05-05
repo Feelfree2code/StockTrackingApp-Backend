@@ -1,14 +1,30 @@
 package com.Feelfree2code.STA.model.viewModel;
 
-import java.time.LocalDate;
+import com.Feelfree2code.STA.common.UpdateVM;
+
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 /**
  * PartBuyHistoryUpdateVM
  */
-public class PartBuyHistoryUpdateVM {
+public class PartBuyHistoryUpdateVM extends UpdateVM {
 
+    @NotNull
     public int partId;
-    public LocalDate dateTime;
+
+    @NotNull
+    @Temporal(TemporalType.DATE)
+    public Date dateTime;
+
+    @NotNull
+    @Min(1)
     public int amount;
+
+    @NotNull
+    @Min(1)
     public double price;
 }

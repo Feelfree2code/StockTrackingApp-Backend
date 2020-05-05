@@ -4,41 +4,58 @@ import com.Feelfree2code.STA.common.BaseDTO;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * CustomerDTO
  */
 @Entity
-@Table(name = "Customer_DTO")
+@Table(name = "Customer")
 public class CustomerDTO extends BaseDTO {
+    @NotEmpty
+    @NotNull
+    @Size(min=4, max=15)
+    private String firstName;
 
-    private String first_name;
-    private String last_name;
-    private String phone_number;
+    @NotEmpty
+    @NotNull
+    @Size(min=4, max=15)
+    private String lastName;
+
+    @NotEmpty
+    @NotNull
+    private String phoneNumber;
+
+    @Email
+    @NotNull
+    @NotEmpty
     private String email;
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {

@@ -2,9 +2,17 @@ package com.Feelfree2code.STA.model.domain;
 
 import com.Feelfree2code.STA.common.BaseDTO;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.time.LocalDate;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.Date;
 
 /**
  * ProjectDTO
@@ -13,25 +21,38 @@ import java.time.LocalDate;
 @Table(name="Project")
 public class ProjectDTO extends BaseDTO {
 
-    private LocalDate start_time;
-    private LocalDate end_time;
+    @NotNull
+    @Temporal(TemporalType.DATE)
+    private Date startTime;
+
+    @Temporal(TemporalType.DATE)
+    @Future
+    private Date endTime;
+
+    @NotEmpty
+    @NotNull
+    @Size(min = 1, max = 10)
     private String title;
+
+    @NotEmpty
+    @NotNull
+    @Size(min = 10, max = 200)
     private String address;
 
-    public LocalDate getStart_time() {
-        return start_time;
+    public Date getStartTime() {
+        return startTime;
     }
 
-    public void setStart_time(LocalDate start_time) {
-        this.start_time = start_time;
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
     }
 
-    public LocalDate getEnd_time() {
-        return end_time;
+    public Date getEndTime() {
+        return endTime;
     }
 
-    public void setEnd_time(LocalDate end_time) {
-        this.end_time = end_time;
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 
     public String getTitle() {

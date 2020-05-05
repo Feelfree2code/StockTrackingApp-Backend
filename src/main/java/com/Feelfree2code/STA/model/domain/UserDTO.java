@@ -4,6 +4,10 @@ import com.Feelfree2code.STA.common.BaseDTO;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * UserDTO
@@ -11,16 +15,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name="UserTable")
 public class UserDTO extends BaseDTO {  
-    private String user_name;
-    private String email;
-    private boolean is_admin;
+    @NotNull
+    @NotEmpty
+    @Size(min = 3, max = 11)
+    private String userName;
 
-    public String getUser_name() {
-        return user_name;
+    @NotEmpty
+    @NotNull
+    @Email
+    private String email;
+    private boolean isAdmin;
+
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getEmail() {
@@ -31,11 +42,11 @@ public class UserDTO extends BaseDTO {
         this.email = email;
     }
 
-    public boolean getIsAdmin() {
-        return is_admin;
+    public boolean isAdmin() {
+        return isAdmin;
     }
 
-    public void setIs_admin(boolean is_admin) {
-        this.is_admin = is_admin;
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 }
