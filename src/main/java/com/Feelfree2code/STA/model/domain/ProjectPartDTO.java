@@ -6,25 +6,31 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 /**
  * ProjectPartDTO
  */
 @Entity
-@Table(name = "Project_Part_DTO")
+@Table(name = "ProjectPart")
 public class ProjectPartDTO extends BaseDTO {
-    
+
+    @NotNull
+    @Min(1)
     private Integer amount;
 
     // F_KEY
-       
+
+    @NotNull
     @ManyToOne
     @JoinColumn(name="fk_project")
-    private ProjectDTO project_id;
-       
+    private ProjectDTO projectId;
+
+    @NotNull
     @ManyToOne
     @JoinColumn(name="fk_part")
-    private PartDTO part_id;
+    private PartDTO partId;
 
     public Integer getAmount() {
         return amount;
@@ -34,20 +40,20 @@ public class ProjectPartDTO extends BaseDTO {
         this.amount = amount;
     }
 
-    public ProjectDTO getProject_id() {
-        return project_id;
+    public ProjectDTO getProjectId() {
+        return projectId;
     }
 
-    public void setProject_id(ProjectDTO project_id) {
-        this.project_id = project_id;
+    public void setProjectId(ProjectDTO projectId) {
+        this.projectId = projectId;
     }
 
-    public PartDTO getPart_id() {
-        return part_id;
+    public PartDTO getPartId() {
+        return partId;
     }
 
-    public void setPart_id(PartDTO part_id) {
-        this.part_id = part_id;
+    public void setPartId(PartDTO partId) {
+        this.partId = partId;
     }
 
     

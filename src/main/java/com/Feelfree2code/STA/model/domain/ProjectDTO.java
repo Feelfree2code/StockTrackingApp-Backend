@@ -1,15 +1,10 @@
 package com.Feelfree2code.STA.model.domain;
 
-import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
 import com.Feelfree2code.STA.common.BaseDTO;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.time.LocalDate;
 
 /**
  * ProjectDTO

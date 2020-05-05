@@ -1,9 +1,9 @@
 package com.Feelfree2code.STA.model.domain;
 
+import com.Feelfree2code.STA.common.BaseDTO;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
-import com.Feelfree2code.STA.common.BaseDTO;
 
 /**
  * UserDTO
@@ -11,16 +11,16 @@ import com.Feelfree2code.STA.common.BaseDTO;
 @Entity
 @Table(name="UserTable")
 public class UserDTO extends BaseDTO {  
-    private String userName;
+    private String user_name;
     private String email;
-    private boolean isAdmin;
+    private boolean is_admin;
 
-    public String getUserName() {
-        return userName;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
     public String getEmail() {
@@ -31,11 +31,11 @@ public class UserDTO extends BaseDTO {
         this.email = email;
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
+    public boolean getIsAdmin() {
+        return is_admin;
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    public void setIs_admin(boolean is_admin) {
+        this.is_admin = is_admin;
     }
 }
