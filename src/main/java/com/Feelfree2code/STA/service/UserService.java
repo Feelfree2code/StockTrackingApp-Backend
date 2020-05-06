@@ -18,22 +18,24 @@ import java.util.List;
  * userService
  */
 @Service
-public class UserService implements IUserService, IdValidator {
+public class UserService implements IBaseService<UserVM, UserAddVM, UserUpdateVM, UserDTO>, IdValidator {
 
-
-    @Autowired
     private IBaseRepository repository;
 
-    public ResponseEntity<List<UserVM>> get(boolean showIsDeleted) {
-        List<UserDTO> records = repository.findByIsDeleted(showIsDeleted);
+    public UserService(IBaseRepository repository) {
+        this.repository = repository;
+    }
+
+    @Override
+    public ResponseEntity<List<UserVM>> get() {
+        List<UserDTO> records = repository.findAll();
         List<UserVM> results = new ArrayList<>();
 
         for (UserDTO record : records) {
             UserVM vm = new UserVM();
-            vm.email = record.getEmail();
-            vm.userName = record.getUserName();
-            vm.isAdmin = record.isAdmin();
             vm.id = record.getId();
+            vm.userName = record.getUserName();
+            vm.email = record.getEmail();
 
             results.add(vm);
         }
@@ -72,7 +74,6 @@ public class UserService implements IUserService, IdValidator {
         entity.setUserName(model.userName);
         entity.setEmail(model.email);
         entity.setAdmin(model.isAdmin);
-        entity.setDeleted(model.isDeleted);
 
         repository.save(entity);
         return new ResponseEntity<>(entity, HttpStatus.OK);
@@ -96,7 +97,7 @@ public class UserService implements IUserService, IdValidator {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    public ResponseEntity<UserDTO> delete(Integer id) {
+    public ResponseEntity<UserVM> delete(Integer id) {
         if (isValidId(id)) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -107,6 +108,28 @@ public class UserService implements IUserService, IdValidator {
         }
 
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @Override
+    public ResponseEntity<List<UserVM>> getIsDeleted(boolean showIsDeleted) {
+        List<UserDTO> records = repository.findByIsDeleted(showIsDeleted);
+        List<UserVM> results = new ArrayList<>();
+
+        for (UserDTO record : records) {
+            UserVM vm = new UserVM();
+            vm.email = record.getEmail();
+            vm.userName = record.getUserName();
+            vm.isAdmin = record.isAdmin();
+            vm.id = record.getId();
+
+            results.add(vm);
+        }
+
+        if (results.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<>(results, HttpStatus.OK);
     }
 
     @Override
