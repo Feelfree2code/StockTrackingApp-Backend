@@ -14,10 +14,10 @@ import org.springframework.context.annotation.Configuration;
 /**
  * AppConfig
  */
-@Configuration
+//@Configuration
 // @EnableJpaRepositories(basePackages = "com.Feelfree2Code.STA.subStructure",
 // repositoryBaseClass = baseRepository.class)
-public class AppConfig {
+//public class AppConfig {
 
 //    @Bean
 //    public BaseService<UserDTO, UserVM, UserAddVM, UserUpdateVM, Integer> setBaseService() {
@@ -28,4 +28,4 @@ public class AppConfig {
     // public BaseRepository<UserDTO,UserVM,UserAddVM,UserUpdateVM,Integer> setBaseRepository() {
     //     return new BaseRepository<UserDTO, UserVM, UserAddVM, UserUpdateVM, Integer>();
     // }
-}
+//}
